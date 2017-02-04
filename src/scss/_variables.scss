@@ -40,7 +40,7 @@ $small-screen-width: $medium-screen-width - 1; //móviles
 $large-screen-container-width: 1200px; //Si apetece que la página tenga un ancho máximo
 
 //border radius
-$default-border-radius: 2px;
+$default-border-radius: 3px;
 
 //margins - padding
 $margin-top-paragraph: 0.5em;
@@ -49,3 +49,4 @@ $margin-left-lists: 10px;
 $margin-internal-bullet-list: 3px;
 $line-size: 1.2em;
 $default-padding: 10px;
+$default-margin: 10px;

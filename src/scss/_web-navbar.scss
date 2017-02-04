@@ -10,9 +10,9 @@
     z-index: 999;
 
     @include if-is-large-screen {
-        top: 0;
-        right: #{6 * $icon-height * 1.5 + $padding-horizontal};
-        height: #{$header-height * 1.55};
+        top: 0 !important;
+        right: #{7 * $icon-height * 1.5 + $padding-horizontal};
+        height: #{$header-height * $header-factor-growth};
         min-width: auto;
     }
 
@@ -23,11 +23,17 @@
         -webkit-overflow-scrolling: touch;
         height: #{$header-height + 20};
 
+        @include if-is-large-screen {
+            width: auto;
+            overflow-x: hidden;
+        }
+
         .menu {
             text-align: center;
-            width: 610px;
+            width: 600px;
             @include if-is-large-screen {
                 text-align: left;
+
             }
 
             .menu-item {
@@ -35,7 +41,7 @@
                 padding: #{($header-height - $font-size-base)/2} $default-padding;
 
                 @include if-is-large-screen {
-                    padding: #{($header-height - $font-size-base)/2*1.55} $default-padding;
+                    padding: #{($header-height - $font-size-base)/2*$header-factor-growth} $default-padding;
                 }
 
                 &.active {

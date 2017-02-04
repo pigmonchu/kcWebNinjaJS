@@ -32,8 +32,10 @@ h6 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin-top: 1.2em;
-    margin-bottom: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.3em;
+    width: 100%;
+    display: inline-block;
 }
 
 p, ul.lista {

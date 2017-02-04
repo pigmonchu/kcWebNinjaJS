@@ -1,7 +1,7 @@
 .web-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+//    position: fixed;
+//    bottom: 0;
+//    left: 0;
     width: 100%;
     background-color: $attention-color;
     color: $default-background-color;
@@ -16,7 +16,8 @@
         color: $default-background-color;
     }
     
-    @include if-is-medium-screen {
+/*    @include if-is-large-screen {
         position: static;
     }
+*/
 }

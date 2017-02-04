@@ -1,0 +1,17 @@
+$width-input: 150px;
+$heigth-input: 16px;
+
+input {
+    width: $width-input;
+    height: $heigth-input;
+    border: 1px solid $color-gray;
+    padding: #{$default-padding/2};
+    border-radius: $default-border-radius;
+    font-size: $font-size-base;
+
+    &:focus {
+        outline-width: 0;
+    }
+
+
+}

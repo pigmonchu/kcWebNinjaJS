@@ -2,9 +2,12 @@
 
 @import "variables";
 @import "../../node_modules/font-awesome/scss/font-awesome";
+@import "sprite";
+@include sprites($spritesheet-sprites);
 @import "utils";
 @import "reset";
 @import "html-tags";
+@import "forms";
 @import "web-header";
 @import "web-navbar";
 @import "web-footer";

@@ -1,8 +1,9 @@
 $padding-vertical: $default-padding;
 $padding-horizontal: $default-padding;
-$icon-height: 20px;
+$icon-height: 25px;
 $logo-height: 30px;
 $header-height: 45px;
+$header-factor-growth: 1.55;
 
 .web-header {
     position: fixed;
@@ -15,13 +16,25 @@ $header-height: 45px;
     height: $header-height;
     width: 100%;
     @include if-is-large-screen {
-        height: #{$header-height * 1.55};
+        top: 0 !important; //No es redundante. Obliga a ponerlo a 0 por encima de las modificaciones de jquery al cambiar la orientación de una tablet
+        height: #{$header-height * $header-factor-growth} !important;
     }
+
+    button {
+        cursor: pointer;
+        border: 0;
+        background-color: transparent;
+
+        &:focus {
+            outline: 0;
+        }
+    }
+
 
     .logo {
         height: $logo-height;
         position: absolute;
-        top: $padding-vertical;
+        top: #{$padding-vertical/2};
         left: $padding-horizontal;
 
         @include if-is-large-screen {
@@ -29,38 +42,50 @@ $header-height: 45px;
         }
     }
 
-    .login, .signup, .separator, .search {
+    .buttons-grp {
+        padding: $padding-vertical $padding-horizontal;
         position: absolute;
-        top: $padding-vertical;
-        height: $icon-height;
-        @include if-is-large-screen {
-            height: #{$icon-height * 1.5};
-            top: #{$padding-vertical * 2};
-        }
-    }
+        right: #{-($width-input + $default-margin + $padding-horizontal)};
+        transition: right 0.3s ease-in-out;
 
-    .login {
-        right: #{4 * $icon-height + $padding-horizontal};
-        @include if-is-large-screen {
-            right: #{4 * $icon-height * 1.5 + $padding-horizontal};
+        &.active {
+            right: 0px;
         }
-    }
 
-    .separator {
-        right: #{3 * $icon-height + $padding-horizontal};
-        @include if-is-large-screen {
-            right: #{3 * $icon-height * 1.5 + $padding-horizontal};
+        .signin, .signup, .separator, .search-grp, .search {
+            height: $icon-height;
+            display: inline-block;
         }
-    }
 
-    .signup {
-        right: #{2 * $icon-height + $padding-horizontal};
-        @include if-is-large-screen {
-            right: #{2 * $icon-height * 1.5 + $padding-horizontal};
+        .signin {
+            @extend .login-btn;
         }
-    }
 
-    .search {
-        right: $padding-horizontal;
+        .signup {
+            @extend .signup-btn;
+        }
+
+        .separator {
+            @extend .divide-btn;
+        }
+
+
+        .search-grp {
+            margin: auto 0 auto 20px;
+            .search {
+                @extend .search-btn;
+                height: $icon-height;
+            }
+            
+            .input-search {
+                margin-left:$default-margin;
+                border: 0px solid transparent;
+                border-radius: 0px;
+                border-bottom: 1px solid $color-gray;
+                background-color: inherit;
+            }
+        }
+
     }
+    
 }

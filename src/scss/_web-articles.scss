@@ -1,9 +1,8 @@
 .articles {
     padding: 0 $default-padding;
-    position:relative;
-    top: #{2 * $header-height};
+    margin-top: #{2 * $header-height}; //para salvar el gap del menú y el header
 
     @include if-is-large-screen {
-        top: $header-height;
+        margin-top: #{$header-height * $header-factor-growth};
     }
 }

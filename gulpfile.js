@@ -8,6 +8,10 @@ var browserify = require("browserify");
 var tap = require("gulp-tap");
 var buffer = require("gulp-buffer");
 var sourceMaps = require("gulp-sourcemaps");
+var imagemin = require('gulp-imagemin');
+var responsive = require('gulp-responsive');
+var spritesmith = require('gulp.spritesmith');
+
 
 //
 // Configuration
@@ -15,63 +19,82 @@ var sourceMaps = require("gulp-sourcemaps");
 
 var config = {
 	sass: {
-		compileSassTaskName: 'compile-sass',
+		taskName: 'compile-sass',
 		watchFiles: './src/scss/*.scss',
 		entryPoint: './src/scss/style.scss',
 		dest: './dist/css'
 	},
 	js: {
-		concatJSTaskName: 'concat-js',
+		taskName: 'concat-js',
 		watchFile: './src/js/*.js',
 		entryPoint: './src/js/main.js',
 		concatFile: 'main.js',
 		dest: './dist/js'
 	}, 
-	fa: {
-		moveFontsAwesomeTaskName: 'move-fonts',
+	fontAwesome: {
+		taskName: 'move-fonts',
 		entryPoint: 'node_modules/font-awesome/fonts/**.*',
 		dest: './dist/css'
 	}, 
-   	images: {
-		imagesTaskName: "optimize-images",
+	images: {
+		taskName: "optimize-images",
 		src: "src/images/*",
 		dest: "./dist/images",
 		responsive: {
-/*			'disc-placeholder.jpg': [ // 520, 320, 250, 125
+			'logoCompleto.png': [ //119, 238, 357
 				{
-					width: 520,
-					rename: { suffix: '-520px' }
+					width: 119,
+					rename: { suffix: '-119px'}
 				},
 				{
-					width: 320,
-					rename: { suffix: '-320px' }
+					width: 238,
+					rename: { suffix: '-238px'}
 				},
 				{
-					width: 250,
-					rename: { suffix: '-250px' }
+					width: 357,
+					rename: { suffix: '-357px'}
 				},
 				{
-					width: 125,
-					rename: { suffix: '-125px' }
+					rename: { suffix: '-original'}
+				}
+			],
+			'logoNombre.png': [ //111, 222, 333
+				{
+					width: 111,
+					rename: { suffix: '-111px'}
 				},
-			]
-*/		}
+				{
+					width: 222,
+					rename: { suffix: '-222px'}
+				},
+				{
+					width: 333,
+					rename: { suffix: '-333px'}
+				},
+				{
+					rename: { suffix: '-original'}
+				}
+			], 
+			'*.*': {
+				width: '100%'
+			}
+		}
 	},
 
 	sprites: {
-		spritesTaskName: "gen-sprites",
-		imgSrc: './src/img/sprites/*.png',
+		taskName: "gen-sprites",
+		imgSrc: './src/images/sprites/*.png',
 		imgName: 'sprite.png',
 		cssName: '_sprite.scss',
-		imgDest: './dist/img/',
+		imgDest: './dist/images/',
 		cssDest: './src/scss/',
-		imgPath:  'img/'
+		imgPath:  '../images/'
 	}
 
 };
 
 // Tarea por defecto, veríficar cambios y en función de ellos lanzar procesos
-gulp.task("default", [config.sass.compileSassTaskName, config.js.concatJSTaskName], function(){
+gulp.task("default", [config.sass.taskName, config.js.taskName, config.images.taskName, config.fontAwesome.taskName, config.sprites.taskName], function(){
 
 	//arrancar el servidor
 	browserSync.init( {
@@ -79,7 +102,7 @@ gulp.task("default", [config.sass.compileSassTaskName, config.js.concatJSTaskNam
 //		proxy: "127.0.0.1:8000"
 	});
 	
-	gulp.watch(config.sass.watchFiles, [config.sass.compileSassTaskName]); //comprobar cambios en fichero scss recompila el sass
+	gulp.watch(config.sass.watchFiles, [config.sass.taskName]); //comprobar cambios en fichero scss recompila el sass
 	gulp.watch('./*.html', function() {
 		browserSync.reload();
 		notify().write("Navegador recargado");
@@ -91,7 +114,7 @@ gulp.task("default", [config.sass.compileSassTaskName, config.js.concatJSTaskNam
 //
 // Compilar SASS
 //
-gulp.task(config.sass.compileSassTaskName, function(){
+gulp.task(config.sass.taskName, function(){
 	gulp.src(config.sass.entryPoint)				//establece fuente
 	.pipe(sourceMaps.init())
 	.pipe(sass().on('error', function(error) {	//lo compila
@@ -108,7 +131,7 @@ gulp.task(config.sass.compileSassTaskName, function(){
 // Concatenar JS
 //
 
-gulp.task(config.js.concatJSTaskName, function() {
+gulp.task(config.js.taskName, function() {
 	gulp.src(config.js.entryPoint)
 //tap para cada archivo
 	.pipe(tap(function(file){
@@ -132,7 +155,33 @@ gulp.task(config.js.concatJSTaskName, function() {
 // Mover fuentes Awewsome
 //
 
-gulp.task(config.fa.moveFontsAwesomeTaskName, function() {
-	gulp.src(config.fa.entryPoint)
-	.pipe(gulp.dest(config.fa.dest));
+gulp.task(config.fontAwesome.taskName, function() {
+	gulp.src(config.fontAwesome.entryPoint)
+	.pipe(gulp.dest(config.fontAwesome.dest));
+});
+
+//
+// Optimizar imagenes
+//
+
+gulp.task(config.images.taskName, function() {
+	gulp.src(config.images.src)
+	.pipe(responsive(config.images.responsive))
+	.pipe(imagemin())
+	.pipe(gulp.dest(config.images.dest));
+});
+
+//
+// Generar sprites para optimizar la carga de la web
+//
+
+gulp.task(config.sprites.taskName, function() {
+	var spriteData = gulp.src(config.sprites.imgSrc).
+	pipe(spritesmith({
+		imgName: config.sprites.imgName,
+		cssName: config.sprites.cssName,
+		imgPath: config.sprites.imgPath+config.sprites.imgName
+	}));
+	spriteData.img.pipe(gulp.dest(config.sprites.imgDest));
+	spriteData.css.pipe(gulp.dest(config.sprites.cssDest));
 });

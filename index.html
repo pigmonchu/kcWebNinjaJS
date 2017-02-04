@@ -9,15 +9,25 @@
 </head>
 <body>
     <header class="web-header" href="#top">
-        <picture>
-            <source srcset="./dist/images/logoNombre.png" media="(max-width: 1023px)">
-            <source srcset="./dist/images/logoCompleto.png" media="(min-width: 1024px)">
-            <img class="logo" src="./dist/images/logoNombre.png" alt="logo digestiveThinking">
-        </picture>
-        <img class="login" src="./dist/images/signin.png" alt"login">
-        <img class="separator" src="./dist/images/divide.png" alt"separador">
-        <img class="signup" src="./dist/images/signup.png" alt"registro">
-        <img class="search" src="./dist/images/search.png" alt"búscar articulos">
+        <div class="logo-grp">
+            <picture>
+                <source srcset="./dist/images/logoNombre-111px.png 1x, ./dist/images/logoNombre-222px.png 2x, ./dist/images/logoNombre-333px.png 3x" media="(max-width: 1023px)">
+                <source srcset="./dist/images/logoCompleto-119px.png 1x, ./dist/images/logoCompleto-238px.png 2x, ./dist/images/logoCompleto-357px.png 3x" media="(min-width: 1024px)">
+                <img class="logo" src="./dist/images/logoNombre-original.png" alt="logo digestiveThinking">
+            </picture>
+        </div>
+        <div class="buttons-grp">
+            <button class="signin"></button>
+            <!--a href="./login.html"><img class="login" src="./dist/images/signin.png" alt"login"></a-->
+            <i class="separator"></i>
+            <button class="signup"></button>
+            <!--a href="./signup.html"><img class="signup" src="./dist/images/signup.png" alt"registro"></a-->
+            <div class="search-grp">
+                <button class="search"></button>
+                <!--img class="search" src="./dist/images/search.png" alt"búscar articulos"-->
+                <input type="text" class="input-search">
+            </div>
+        </div>
     </header>
     <nav class="web-navbar">
         <div class="horizontal-container">
@@ -35,6 +45,7 @@
     <section class="articles">
         <article class="testing">
             <h1>Título</h1>
+            <h2>Título</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id viverra tortor. Nullam consequat sem et lorem molestie tempus. In auctor dolor id auctor gravida. In quis ante sodales mauris viverra feugiat lobortis at felis. Sed dictum condimentum fermentum. Nullam eu nisi ac quam convallis mattis. Duis mattis rutrum condimentum. Sed semper metus et commodo elementum. Duis placerat pretium nisl vel posuere. Morbi sed viverra risus, non convallis libero. Donec sed tristique risus. Etiam luctus feugiat venenatis. Sed at aliquet velit, a mollis ante. Suspendisse pharetra ante ligula, vel scelerisque odio finibus eu. Suspendisse potenti.</p>
             <p>Quisque ac leo mauris. Suspendisse et nunc in sapien tincidunt efficitur. Suspendisse potenti. Pellentesque luctus semper ultrices. Quisque sit amet ante scelerisque, molestie ligula in, volutpat odio. In lacinia, odio eu semper auctor, augue massa sodales lacus, vel pretium urna ligula sed quam. Etiam varius, ligula sed volutpat imperdiet, libero augue lobortis ipsum, imperdiet posuere ligula ante ut est. Nam sollicitudin elit enim, vel placerat mi egestas eget. Cras id nunc vulputate, accumsan purus eu, placerat neque. Pellentesque sodales lorem eu turpis ultricies, sed vestibulum magna accumsan. Pellentesque non aliquet nibh. Quisque tristique sed mi nec luctus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In laoreet ultricies finibus.</p>
             <p>Etiam mauris purus, malesuada et dapibus sit amet, facilisis ut metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque auctor, turpis ut interdum lacinia, ligula ante tristique libero, et lacinia enim tortor eu nibh. Nunc pulvinar ante quis sodales tempor. Suspendisse ac dapibus sem. Sed viverra molestie erat, dictum mollis magna. Sed commodo est enim, id dapibus dolor dapibus at. Maecenas tempus est id ante consectetur, ac egestas dolor ornare. In urna nibh, tempor vel elit quis, aliquet volutpat libero. Suspendisse a velit ac nisl lacinia efficitur ac eget ex. Ut auctor fermentum velit, quis porta nunc elementum id. Maecenas accumsan lacinia nisi, ut consectetur arcu pulvinar et. Integer a posuere risus, in sagittis nunc. Pellentesque posuere dignissim varius.</p>
@@ -48,7 +59,7 @@
         </article>
     </section>    
     <footer class="web-footer">
-        <p>digestiveThinking &copy; 2017 <a href="#top"><i class="fa fa-chevron-up fa-lg pull-right" aria-hidden="true"></i></a></p>
+        <p>digestiveThinking &copy; 2017 <a href="#top"><i class="fa fa-chevron-up  pull-right" aria-hidden="true"></i></a></p>
     </footer>
 </body>
 <script src="./dist/js/main.js"></script>
