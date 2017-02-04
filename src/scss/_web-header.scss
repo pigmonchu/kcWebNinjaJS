@@ -1,0 +1,66 @@
+$padding-vertical: $default-padding;
+$padding-horizontal: $default-padding;
+$icon-height: 20px;
+$logo-height: 30px;
+$header-height: 45px;
+
+.web-header {
+    position: fixed;
+    display: block;
+    z-index: 998;
+    top: 0; 
+    left: 0;
+    background-color: darken($default-background-color, 5%);
+    border-bottom: 1px solid $light-gray;
+    height: $header-height;
+    width: 100%;
+    @include if-is-large-screen {
+        height: #{$header-height * 1.55};
+    }
+
+    .logo {
+        height: $logo-height;
+        position: absolute;
+        top: $padding-vertical;
+        left: $padding-horizontal;
+
+        @include if-is-large-screen {
+            height: #{$logo-height * 2};
+        }
+    }
+
+    .login, .signup, .separator, .search {
+        position: absolute;
+        top: $padding-vertical;
+        height: $icon-height;
+        @include if-is-large-screen {
+            height: #{$icon-height * 1.5};
+            top: #{$padding-vertical * 2};
+        }
+    }
+
+    .login {
+        right: #{4 * $icon-height + $padding-horizontal};
+        @include if-is-large-screen {
+            right: #{4 * $icon-height * 1.5 + $padding-horizontal};
+        }
+    }
+
+    .separator {
+        right: #{3 * $icon-height + $padding-horizontal};
+        @include if-is-large-screen {
+            right: #{3 * $icon-height * 1.5 + $padding-horizontal};
+        }
+    }
+
+    .signup {
+        right: #{2 * $icon-height + $padding-horizontal};
+        @include if-is-large-screen {
+            right: #{2 * $icon-height * 1.5 + $padding-horizontal};
+        }
+    }
+
+    .search {
+        right: $padding-horizontal;
+    }
+}

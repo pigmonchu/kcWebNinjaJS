@@ -26,7 +26,48 @@ var config = {
 		entryPoint: './src/js/main.js',
 		concatFile: 'main.js',
 		dest: './dist/js'
+	}, 
+	fa: {
+		moveFontsAwesomeTaskName: 'move-fonts',
+		entryPoint: 'node_modules/font-awesome/fonts/**.*',
+		dest: './dist/css'
+	}, 
+   	images: {
+		imagesTaskName: "optimize-images",
+		src: "src/images/*",
+		dest: "./dist/images",
+		responsive: {
+/*			'disc-placeholder.jpg': [ // 520, 320, 250, 125
+				{
+					width: 520,
+					rename: { suffix: '-520px' }
+				},
+				{
+					width: 320,
+					rename: { suffix: '-320px' }
+				},
+				{
+					width: 250,
+					rename: { suffix: '-250px' }
+				},
+				{
+					width: 125,
+					rename: { suffix: '-125px' }
+				},
+			]
+*/		}
+	},
+
+	sprites: {
+		spritesTaskName: "gen-sprites",
+		imgSrc: './src/img/sprites/*.png',
+		imgName: 'sprite.png',
+		cssName: '_sprite.scss',
+		imgDest: './dist/img/',
+		cssDest: './src/scss/',
+		imgPath:  'img/'
 	}
+
 };
 
 // Tarea por defecto, veríficar cambios y en función de ellos lanzar procesos
@@ -34,8 +75,8 @@ gulp.task("default", [config.sass.compileSassTaskName, config.js.concatJSTaskNam
 
 	//arrancar el servidor
 	browserSync.init( {
-//		server: "./"
-		proxy: "127.0.0.1:8000"
+		server: "./"
+//		proxy: "127.0.0.1:8000"
 	});
 	
 	gulp.watch(config.sass.watchFiles, [config.sass.compileSassTaskName]); //comprobar cambios en fichero scss recompila el sass
@@ -87,5 +128,11 @@ gulp.task(config.js.concatJSTaskName, function() {
 	.pipe(browserSync.stream());
 });
 
+//
+// Mover fuentes Awewsome
+//
 
-
+gulp.task(config.fa.moveFontsAwesomeTaskName, function() {
+	gulp.src(config.fa.entryPoint)
+	.pipe(gulp.dest(config.fa.dest));
+});

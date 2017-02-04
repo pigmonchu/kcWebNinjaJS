@@ -1,0 +1,47 @@
+.navbar {
+    position: fixed;
+    top: #{$header-height};
+    height: $header-height;
+    border-bottom: 1px solid $light-gray;
+    background-color: darken($default-background-color, 5%);
+    color: $color-gray;
+    font-weight: 300;
+    overflow: hidden;
+
+    @include if-is-large-screen {
+        top: 0;
+        right: #{6 * $icon-height * 1.5 + $padding-horizontal};
+        height: #{$header-height * 1.55};
+        z-index: 999;
+        min-width: auto;
+    }
+
+   .horizontal-container {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        width: 100vw;
+        -webkit-overflow-scrolling: touch;
+        height: #{$header-height + 20};
+
+        .menu {
+            text-align: center;
+            width: 610px;
+            @include if-is-large-screen {
+                text-align: left;
+            }
+
+            .menu-item {
+                display: inline-block;
+                padding: #{($header-height - $font-size-base)/2} $default-padding;
+
+                @include if-is-large-screen {
+                    padding: #{($header-height - $font-size-base)/2*1.55} $default-padding;
+                }
+
+                &.active {
+                    color: $dark-gray;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+// font-awesome
+$fa-font-path: "./";
+
+// font families
+$main-font-family: "Lato", sanserif;
+$titles-font-family: "Lato", sanserif;
+$logo-navbar-font-family: "Roboto Mono", monospace;
+$icons-font-family: "FontAwesome";
+$body-font-family: $main-font-family;
+
+// font sizes
+$font-size-base: 16px;
+$font-size-small: $font-size-base * 0.825;
+$font-size-large: $font-size-base * 1.425;
+$font-size-h1: $font-size-base + 15px; 
+$font-size-h2: $font-size-base + 12px; 
+$font-size-h3: $font-size-base + 9px; 
+$font-size-h4: $font-size-base + 6px; 
+$font-size-h5: $font-size-base + 3px; 
+$font-size-h6: $font-size-base; 
+
+// colors
+$primary-color: black;
+$attention-color: #0FBCD4;
+$background-color: white;
+$color-gray: #8393A7;
+$light-gray: #BEC7D1;
+$dark-gray: #596675;
+
+$default-text-color: $primary-color;
+$default-background-color: $background-color;
+
+$inverse-text-color: $default-background-color;
+$inverse-background-color: $default-text-color;
+
+// responsive breakpoints
+$large-screen-width: 1024px; //iPad apaisado o superior
+$medium-screen-width: 768px; //iPad vertical
+$small-screen-width: $medium-screen-width - 1; //móviles
+$large-screen-container-width: 1200px; //Si apetece que la página tenga un ancho máximo
+
+//border radius
+$default-border-radius: 2px;
+
+//margins - padding
+$margin-top-paragraph: 0.5em;
+$margin-bottom-paragraph: 1em;
+$margin-left-lists: 10px;
+$margin-internal-bullet-list: 3px;
+$line-size: 1.2em;
+$default-padding: 10px;
