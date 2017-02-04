@@ -1,0 +1,9 @@
+.articles {
+    padding: 0 $default-padding;
+    position:relative;
+    top: #{2 * $header-height};
+
+    @include if-is-large-screen {
+        top: $header-height;
+    }
+}

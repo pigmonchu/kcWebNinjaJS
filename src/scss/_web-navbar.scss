@@ -1,4 +1,4 @@
-.navbar {
+.web-navbar {
     position: fixed;
     top: #{$header-height};
     height: $header-height;
@@ -7,12 +7,12 @@
     color: $color-gray;
     font-weight: 300;
     overflow: hidden;
+    z-index: 999;
 
     @include if-is-large-screen {
         top: 0;
         right: #{6 * $icon-height * 1.5 + $padding-horizontal};
         height: #{$header-height * 1.55};
-        z-index: 999;
         min-width: auto;
     }
 

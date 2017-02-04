@@ -12,6 +12,10 @@
         line-height: 1em;
     }
 
+    a {
+        color: $default-background-color;
+    }
+    
     @include if-is-medium-screen {
         position: static;
     }
