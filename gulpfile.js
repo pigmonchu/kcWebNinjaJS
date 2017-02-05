@@ -36,10 +36,10 @@ var config = {
 		entryPoint: 'node_modules/font-awesome/fonts/**.*',
 		dest: './dist/css'
 	}, 
-	articlesDB: {
-		taskName: 'move-articles',
-		entryPoint: './src/articles/*',
-		dest: './db/articles'
+	videos: {
+		taskName: 'move-videos',
+		entryPoint: './src/videos/*',
+		dest: './dist/videos'
 	}, 
 	images: {
 		taskName: "optimize-images",
@@ -80,6 +80,182 @@ var config = {
 					rename: { suffix: '-original'}
 				}
 			], 
+			'article01.jpg': [ //400, 590, 800, 1180, 1770 3 saltos 3 densidades
+				{
+					width: 400,
+					rename: { suffix: '-400px'}
+				},
+				{
+					width: 590,
+					rename: { suffix: '-590px'}
+				},
+				{
+					width: 800,
+					rename: { suffix: '-800px'}
+				},
+				{
+					width: 1180,
+					rename: { suffix: '-1180px'}
+				},
+				{
+					width: 1770,
+					rename: { suffix: '-1770px'}
+				}
+			],
+			'article02.jpg': [ //400, 590, 800, 1180, 1770 3 saltos 3 densidades
+				{
+					width: 400,
+					rename: { suffix: '-400px'}
+				},
+				{
+					width: 590,
+					rename: { suffix: '-590px'}
+				},
+				{
+					width: 800,
+					rename: { suffix: '-800px'}
+				},
+				{
+					width: 1180,
+					rename: { suffix: '-1180px'}
+				},
+				{
+					width: 1770,
+					rename: { suffix: '-1770px'}
+				}
+			],
+			'article03.jpg': [ //400, 590, 800, 1180, 1770 3 saltos 3 densidades
+				{
+					width: 400,
+					rename: { suffix: '-400px'}
+				},
+				{
+					width: 590,
+					rename: { suffix: '-590px'}
+				},
+				{
+					width: 800,
+					rename: { suffix: '-800px'}
+				},
+				{
+					width: 1180,
+					rename: { suffix: '-1180px'}
+				},
+				{
+					width: 1770,
+					rename: { suffix: '-1770px'}
+				}
+			],
+			'article04.jpg': [ //400, 590, 800, 1180, 1770 3 saltos 3 densidades
+				{
+					width: 400,
+					rename: { suffix: '-400px'}
+				},
+				{
+					width: 590,
+					rename: { suffix: '-590px'}
+				},
+				{
+					width: 800,
+					rename: { suffix: '-800px'}
+				},
+				{
+					width: 1180,
+					rename: { suffix: '-1180px'}
+				},
+				{
+					width: 1770,
+					rename: { suffix: '-1770px'}
+				}
+			],
+			'article05.jpg': [ //400, 590, 800, 1180, 1770 3 saltos 3 densidades
+				{
+					width: 400,
+					rename: { suffix: '-400px'}
+				},
+				{
+					width: 590,
+					rename: { suffix: '-590px'}
+				},
+				{
+					width: 800,
+					rename: { suffix: '-800px'}
+				},
+				{
+					width: 1180,
+					rename: { suffix: '-1180px'}
+				},
+				{
+					width: 1770,
+					rename: { suffix: '-1770px'}
+				}
+			],
+			'article06.jpg': [ //400, 590, 800, 1180, 1770 3 saltos 3 densidades
+				{
+					width: 400,
+					rename: { suffix: '-400px'}
+				},
+				{
+					width: 590,
+					rename: { suffix: '-590px'}
+				},
+				{
+					width: 800,
+					rename: { suffix: '-800px'}
+				},
+				{
+					width: 1180,
+					rename: { suffix: '-1180px'}
+				},
+				{
+					width: 1770,
+					rename: { suffix: '-1770px'}
+				}
+			],
+			'article07.jpg': [ //400, 590, 800, 1180, 1770 3 saltos 3 densidades
+				{
+					width: 400,
+					rename: { suffix: '-400px'}
+				},
+				{
+					width: 590,
+					rename: { suffix: '-590px'}
+				},
+				{
+					width: 800,
+					rename: { suffix: '-800px'}
+				},
+				{
+					width: 1180,
+					rename: { suffix: '-1180px'}
+				},
+				{
+					width: 1770,
+					rename: { suffix: '-1770px'}
+				}
+			],
+			'article08.jpg': [ //400, 590, 800, 1180, 1770 3 saltos 3 densidades
+				{
+					width: 400,
+					rename: { suffix: '-400px'}
+				},
+				{
+					width: 590,
+					rename: { suffix: '-590px'}
+				},
+				{
+					width: 800,
+					rename: { suffix: '-800px'}
+				},
+				{
+					width: 1180,
+					rename: { suffix: '-1180px'}
+				},
+				{
+					width: 1770,
+					rename: { suffix: '-1770px'}
+				}
+			],
 			'*.*': {
 				width: '100%'
 			}
@@ -99,7 +275,7 @@ var config = {
 };
 
 // Tarea por defecto, veríficar cambios y en función de ellos lanzar procesos
-gulp.task("default", [config.sass.taskName, config.js.taskName, config.fontAwesome.taskName, config.sprites.taskName, config.articlesDB.taskName], function(){
+gulp.task("default", [config.sass.taskName, config.js.taskName, config.fontAwesome.taskName, config.sprites.taskName, config.videos.taskName], function(){
 
 	//arrancar el servidor
 	browserSync.init( {
@@ -166,12 +342,12 @@ gulp.task(config.fontAwesome.taskName, function() {
 });
 
 //
-// Cargar artículos de prueba
+// Mover videos
 //
 
-gulp.task(config.articlesDB.taskName, function() {
-	gulp.src(config.articlesDB.entryPoint)
-	.pipe(gulp.dest(config.articlesDB.dest));
+gulp.task(config.videos.taskName, function() {
+	gulp.src(config.videos.entryPoint)
+	.pipe(gulp.dest(config.videos.dest));
 });
 
 //
