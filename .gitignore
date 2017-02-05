@@ -2,3 +2,4 @@ node_modules
 materia prima
 dist
 src/scss/_sprite.scss
+db

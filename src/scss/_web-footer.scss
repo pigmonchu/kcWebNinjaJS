@@ -1,14 +1,11 @@
 .web-footer {
-//    position: fixed;
-//    bottom: 0;
-//    left: 0;
     width: 100%;
     background-color: $attention-color;
     color: $default-background-color;
     padding: $default-padding;
 
     p {
-        margin: 0.3em 0;
+        margin: 0.3em auto;
         line-height: 1em;
     }
 
@@ -16,8 +13,4 @@
         color: $default-background-color;
     }
     
-/*    @include if-is-large-screen {
-        position: static;
-    }
-*/
 }

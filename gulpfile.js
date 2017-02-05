@@ -36,6 +36,11 @@ var config = {
 		entryPoint: 'node_modules/font-awesome/fonts/**.*',
 		dest: './dist/css'
 	}, 
+	articlesDB: {
+		taskName: 'move-articles',
+		entryPoint: './src/articles/*',
+		dest: './db/articles'
+	}, 
 	images: {
 		taskName: "optimize-images",
 		src: "src/images/*",
@@ -94,12 +99,12 @@ var config = {
 };
 
 // Tarea por defecto, veríficar cambios y en función de ellos lanzar procesos
-gulp.task("default", [config.sass.taskName, config.js.taskName, config.images.taskName, config.fontAwesome.taskName, config.sprites.taskName], function(){
+gulp.task("default", [config.sass.taskName, config.js.taskName, config.fontAwesome.taskName, config.sprites.taskName, config.articlesDB.taskName], function(){
 
 	//arrancar el servidor
 	browserSync.init( {
-		server: "./"
-//		proxy: "127.0.0.1:8000"
+//		server: "./"
+		proxy: "127.0.0.1:8000"
 	});
 	
 	gulp.watch(config.sass.watchFiles, [config.sass.taskName]); //comprobar cambios en fichero scss recompila el sass
@@ -158,6 +163,15 @@ gulp.task(config.js.taskName, function() {
 gulp.task(config.fontAwesome.taskName, function() {
 	gulp.src(config.fontAwesome.entryPoint)
 	.pipe(gulp.dest(config.fontAwesome.dest));
+});
+
+//
+// Cargar artículos de prueba
+//
+
+gulp.task(config.articlesDB.taskName, function() {
+	gulp.src(config.articlesDB.entryPoint)
+	.pipe(gulp.dest(config.articlesDB.dest));
 });
 
 //

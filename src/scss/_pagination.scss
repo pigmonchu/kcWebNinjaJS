@@ -1,0 +1,32 @@
+.pagination {
+    text-align: center;
+    margin: #{$default-margin * 4};
+
+    .newer, .older, .home {
+        background-color: $attention-color;
+        border: 0px solid transparent;
+        color: $default-background-color;
+        width: 32px;
+        height: 32px;
+        margin: #{$default-margin/2};
+
+        &[disabled] {
+            background-color: $color-gray;
+            color: $light-gray;
+        }
+
+        @include if-is-medium-screen {
+            width: 150px;
+        }
+        .text {
+            display: none;
+
+            @include if-is-medium-screen {
+                &::before {
+                    content: " ";
+                }
+                display: inline;
+            }
+        }
+    }
+}

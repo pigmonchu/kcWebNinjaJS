@@ -9,6 +9,25 @@
     }
 }
 
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.navigate {
+    cursor: pointer; 
+}
+
+/*@media (max-width: 1260px) {
+	.container {
+		padding: 0 10px;
+	}
+}*/
+
+
+
 @mixin text-ellipsis {
     text-overflow: ellipsis;
     white-space: nowrap;

@@ -8,8 +8,8 @@
 	<link rel="shortcut icon" type="image/x-icon" href="dist/images/favicon.ico">
 </head>
 <body>
-    <header class="web-header" href="#top">
-        <div class="logo-grp">
+    <header class="web-header " href="#top">
+        <div class="logo-grp navigate" id="site-logo" data-href="./">
             <picture>
                 <source srcset="./dist/images/logoNombre-111px.png 1x, ./dist/images/logoNombre-222px.png 2x, ./dist/images/logoNombre-333px.png 3x" media="(max-width: 1023px)">
                 <source srcset="./dist/images/logoCompleto-119px.png 1x, ./dist/images/logoCompleto-238px.png 2x, ./dist/images/logoCompleto-357px.png 3x" media="(min-width: 1024px)">
@@ -17,49 +17,232 @@
             </picture>
         </div>
         <div class="buttons-grp">
-            <button class="signin"></button>
-            <!--a href="./login.html"><img class="login" src="./dist/images/signin.png" alt"login"></a-->
+            <button class="icon-btn signin navigate" id="signin" data-href="./login.html"></button>
             <i class="separator"></i>
-            <button class="signup"></button>
-            <!--a href="./signup.html"><img class="signup" src="./dist/images/signup.png" alt"registro"></a-->
+            <button class="icon-btn signup navigate" id="signup" data-href="./signup.html"></button>
             <div class="search-grp">
-                <button class="search"></button>
-                <!--img class="search" src="./dist/images/search.png" alt"búscar articulos"-->
+                <button class="icon-btn search" id="search"></button>
                 <input type="text" class="input-search">
             </div>
         </div>
     </header>
-    <nav class="web-navbar">
+    <nav class="web-navbar ">
         <div class="horizontal-container">
             <ul class="menu">
-                <li class="menu-item" id="humanidades">Humanidades</li>
-                <li class="menu-item" id="personalG">Desarrollo personal</li>
-                <li class="menu-item" id="ciencia">Ciencia</li>
-                <li class="menu-item" id="tecnologia">Tecnología</li>
-                <li class="menu-item" id="educacion">Educación</li>
-                <li class="menu-item" id="ocio">Ocio</li>
+                <li class="menu-item navigate" data-href="./humanidades.html" id="humanidades">Humanidades</li>
+                <li class="menu-item navigate" data-href="./personal.html" id="personalG">Desarrollo personal</li>
+                <li class="menu-item navigate" data-href="./ciencia.html" id="ciencia">Ciencia</li>
+                <li class="menu-item navigate" data-href="./tecnologia.html" id="tecnologia">Tecnología</li>
+                <li class="menu-item navigate" data-href="./educacion.html" id="educacion">Educación</li>
+                <li class="menu-item navigate" data-href="./ocio.html" id="ocio">Ocio</li>
             </ul>
         </div>
     </nav>
 
-    <section class="articles">
-        <article class="testing">
-            <h1>Título</h1>
-            <h2>Título</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id viverra tortor. Nullam consequat sem et lorem molestie tempus. In auctor dolor id auctor gravida. In quis ante sodales mauris viverra feugiat lobortis at felis. Sed dictum condimentum fermentum. Nullam eu nisi ac quam convallis mattis. Duis mattis rutrum condimentum. Sed semper metus et commodo elementum. Duis placerat pretium nisl vel posuere. Morbi sed viverra risus, non convallis libero. Donec sed tristique risus. Etiam luctus feugiat venenatis. Sed at aliquet velit, a mollis ante. Suspendisse pharetra ante ligula, vel scelerisque odio finibus eu. Suspendisse potenti.</p>
-            <p>Quisque ac leo mauris. Suspendisse et nunc in sapien tincidunt efficitur. Suspendisse potenti. Pellentesque luctus semper ultrices. Quisque sit amet ante scelerisque, molestie ligula in, volutpat odio. In lacinia, odio eu semper auctor, augue massa sodales lacus, vel pretium urna ligula sed quam. Etiam varius, ligula sed volutpat imperdiet, libero augue lobortis ipsum, imperdiet posuere ligula ante ut est. Nam sollicitudin elit enim, vel placerat mi egestas eget. Cras id nunc vulputate, accumsan purus eu, placerat neque. Pellentesque sodales lorem eu turpis ultricies, sed vestibulum magna accumsan. Pellentesque non aliquet nibh. Quisque tristique sed mi nec luctus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In laoreet ultricies finibus.</p>
-            <p>Etiam mauris purus, malesuada et dapibus sit amet, facilisis ut metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque auctor, turpis ut interdum lacinia, ligula ante tristique libero, et lacinia enim tortor eu nibh. Nunc pulvinar ante quis sodales tempor. Suspendisse ac dapibus sem. Sed viverra molestie erat, dictum mollis magna. Sed commodo est enim, id dapibus dolor dapibus at. Maecenas tempus est id ante consectetur, ac egestas dolor ornare. In urna nibh, tempor vel elit quis, aliquet volutpat libero. Suspendisse a velit ac nisl lacinia efficitur ac eget ex. Ut auctor fermentum velit, quis porta nunc elementum id. Maecenas accumsan lacinia nisi, ut consectetur arcu pulvinar et. Integer a posuere risus, in sagittis nunc. Pellentesque posuere dignissim varius.</p>
-            <p>Phasellus nec lectus quis diam finibus vehicula sit amet vel dolor. Vivamus vel odio quis sapien porta vehicula. Integer quis volutpat orci. Sed pellentesque bibendum ante. Sed maximus eros et mauris elementum, vel efficitur lectus semper. Vivamus libero nunc, facilisis eget pretium vitae, viverra non eros. Vivamus rhoncus fringilla lacus non sollicitudin. Praesent aliquam cursus arcu, ac consectetur nisl iaculis et. Curabitur porttitor placerat tristique. Cras sodales congue venenatis. In hendrerit, tellus in porta lacinia, dolor diam posuere turpis, ac imperdiet odio nulla in neque. Donec nisl ligula, semper ac tempor vitae, dapibus sit amet urna. Integer dictum libero et massa condimentum feugiat quis a enim.</p>
-            <p>Aenean tellus mi, rhoncus cursus blandit in, pharetra eu sem. Integer at suscipit tellus. Phasellus porttitor eros sit amet quam ultricies lacinia. Ut erat lorem, rhoncus vel nulla quis, congue egestas libero. Praesent in euismod ligula. Pellentesque tincidunt purus et magna fermentum volutpat. Suspendisse id suscipit elit, nec scelerisque turpis.</p>
-            <p>Fusce congue lorem a sem iaculis pharetra. Fusce scelerisque gravida magna, a pulvinar ipsum feugiat id. Sed ut neque consequat, faucibus diam in, pulvinar metus. Donec vitae ullamcorper nulla. Suspendisse lacinia ultricies felis, in varius libero facilisis dictum. Mauris pretium ligula at malesuada molestie. Fusce vulputate neque sit amet ex vehicula lacinia. Sed ex risus, rutrum in justo id, finibus viverra quam. Etiam feugiat augue magna, vel egestas risus lacinia eget. Ut quis sem id felis molestie accumsan vitae id est. Vestibulum turpis augue, luctus ut mauris accumsan, euismod consectetur dolor. Etiam fringilla justo eu augue finibus imperdiet. Duis vestibulum nulla et pulvinar consectetur. Nulla blandit rhoncus est sed auctor. Integer vehicula diam nunc, id faucibus dolor pharetra et.</p>
-            <p>In eros lectus, pretium eget lobortis ut, dictum id orci. Vestibulum luctus tellus ut cursus feugiat. Nam porttitor nec elit quis bibendum. Donec lorem tellus, tristique nec pretium sit amet, venenatis id arcu. Phasellus posuere, augue quis accumsan dignissim, turpis eros ornare nibh, ac ultrices ex est sit amet orci. Proin iaculis a tellus et consequat. Nam vel sollicitudin lacus, eu pellentesque ante. Praesent semper diam eget sollicitudin placerat.</p>
-            <p>Mauris venenatis venenatis neque, id feugiat tellus faucibus quis. Vestibulum varius mi id metus faucibus, sit amet laoreet nibh congue. Praesent faucibus orci nunc. Maecenas suscipit risus sit amet sem lobortis, sit amet dapibus felis imperdiet. Vestibulum et varius nisl, at tincidunt odio. Nulla dictum auctor ante id venenatis. Sed sodales tellus aliquam sapien tincidunt vulputate. Cras porta lorem id metus sagittis dictum. Aenean eget eleifend augue. Aliquam quis nibh et ipsum dapibus sollicitudin. Sed sodales orci sed nulla efficitur, nec pharetra odio rutrum. Phasellus blandit elementum lacus, eu condimentum felis viverra ac. In sit amet laoreet magna. Nam sem lectus, tempor et pretium vitae, congue quis urna.</p>
-            <p>Sed tortor ligula, finibus sit amet arcu in, dignissim sollicitudin odio. Suspendisse egestas egestas feugiat. Quisque sodales maximus vulputate. Aliquam bibendum lacus at mauris eleifend consequat. Aenean facilisis sagittis nisi congue pulvinar. Aliquam vulputate lobortis dictum. Nam blandit gravida diam, at tempus augue. Duis ut mattis neque.</p>
-            <p>Donec lacus nunc, tincidunt vitae imperdiet vitae, convallis sed ligula. Sed vitae dolor tempor magna tempus eleifend. Vestibulum lectus justo, auctor a porta et, facilisis non purus. Aenean vehicula interdum odio eu mollis. Maecenas in tortor sagittis lectus laoreet pretium. Proin purus lacus, dictum et justo eget, sagittis elementum libero. Phasellus vestibulum varius lobortis.</p>
+    <section class="articles container">
+        <article class="article" data-id="1">
+            <img src="./dist/images/article01.jpg" alt="Hombre de negocios sin cabeza" class="ilustration">
+            <div class="info">
+                <header>
+                    <div class="author">
+                        <img class="portrait" src="./dist/images/author01.jpg" alt="foto del autor">
+                        <p class="nombre"><a href="./api/authors/1">Chica Pelirroja</a></p>
+                        <p class="date">6 enero 11:03pm</p>
+                    </div>
+                    <div class="socials">
+                        <div class="likes"><button class="icon-btn favorite-btn"></button><span class="num-likes">12</span></div>
+                        <div class="comments"><button class="icon-btn comments-btn"></button><span class="num-comments">34</span></div>
+                    </div>
+                </header>
+                <h1 class="title">Chanante ipsum dolor sit amet</h1>
+                <p class="intro">Reina en mi espíritu una alegría admirable, muy parecida a las dulces alboradas de la primavera, de que gozo aquí con delicia. Estoy solo, y me felicito de vivir en este país, el más a propósito para almas como la mía, soy tan dichoso, mi querido amigo, me sojuzga de tal modo la idea de reposar, que no me ocupo de mi arte. Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y, sin embargo, jamás he sido mejor pintor Cuando el valle se vela en torno mío con un encaje de vapores; cuando el sol de mediodía centellea sobre la impenetrable sombra de mi bosque sin conseguir otra cosa que filtrar entre las hojas algunos rayos que penetran hasta el fondo del santuario, cuando recostado sobre la crecida hierba, cerca de la cascada, mi vista, más próxima a la tierra, descubre multitud de menudas y diversas plantas; cuando siento más cerca de mi corazón los rumores de vida de ese pequeño mundo que palpita en los tallos de las hojas, y veo las formas innumerables e infinitas de los gusanillos y de los insectos; cuando siento, en fin, la presencia del Todopoderoso, que nos ha creado</p>
+                <a href="./detail.html" class="sigue">Seguir leyendo...</a>
+            </div>
+        </article>
+        <article class="article" data-id="2">
+            <img src="./dist/images/article02.jpg" alt="Paisaje en penumbra" class="ilustration">
+            <div class="info">
+                <header>
+                    <div class="author">
+                        <img class="portrait" src="./dist/images/author02.jpg" alt="foto del autor">
+                        <p class="nombre"><a href="./api/authors/2">Hipster de ojos claros</a></p>
+                        <p class="date"></p>
+                    </div>
+                    <div class="socials">
+                        <div class="likes"><button class="icon-btn favorite-btn"></button><span class="num-likes">12</span></div>
+                        <div class="comments"><button class="icon-btn comments-btn"></button><span class="num-comments">34</span></div>
+                    </div>
+                </header>
+                <h1 class="title">Quis autem vel eum</h1>
+                <p class="intro">Reina en mi espíritu una alegría admirable, muy parecida a las dulces alboradas de la primavera, de que gozo aquí con delicia. Estoy solo, y me felicito de vivir en este país, el más a propósito para almas como la mía, soy tan dichoso, mi querido amigo, me sojuzga de tal modo la idea de reposar, que no me ocupo de mi arte. Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y, sin embargo, jamás he sido mejor pintor Cuando el valle se vela en torno mío con un encaje de vapores; cuando el sol de mediodía centellea sobre la impenetrable sombra de mi bosque sin conseguir otra cosa que filtrar entre las hojas algunos rayos que penetran hasta el fondo del santuario, cuando recostado sobre la crecida hierba, cerca de la cascada, mi vista, más próxima a la tierra, descubre multitud de menudas y diversas plantas; cuando siento más cerca de mi corazón los rumores de vida de ese pequeño mundo que palpita en los tallos de las hojas, y veo las formas innumerables e infinitas de los gusanillos y de los insectos; cuando siento, en fin, la presencia del Todopoderoso, que nos ha creado</p>
+                <a href="./detail.html" class="sigue">Seguir leyendo...</a>
+                </div>
+        </article>
+        <article class="article" data-id="3">
+            <video controls class="ilustration">
+                <source src="./dist/videos/Aloha-Mundo.mp4" type="video/mp4" />
+            </video>
+            <div class="info">
+                <header>
+                
+                    <div class="author">
+                        <img class="portrait" src="./dist/images/author03.jpg" alt="foto del autor">
+                        <p class="nombre"><a href="./api/authors/3">Doctor Universidad Vital</a></p>
+                        <p class="date"></p>
+                    </div>
+                    <div class="socials">
+                        <div class="likes"><button class="icon-btn favorite-btn"></button><span class="num-likes">12</span></div>
+                        <div class="comments"><button class="icon-btn comments-btn"></button><span class="num-comments">34</span></div>
+                    </div>
+                </header>
+                <h1 class="title">Li Europan lingues es membres del sam familie"</h1>
+                <p class="intro">Reina en mi espíritu una alegría admirable, muy parecida a las dulces alboradas de la primavera, de que gozo aquí con delicia. Estoy solo, y me felicito de vivir en este país, el más a propósito para almas como la mía, soy tan dichoso, mi querido amigo, me sojuzga de tal modo la idea de reposar, que no me ocupo de mi arte. Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y, sin embargo, jamás he sido mejor pintor Cuando el valle se vela en torno mío con un encaje de vapores; cuando el sol de mediodía centellea sobre la impenetrable sombra de mi bosque sin conseguir otra cosa que filtrar entre las hojas algunos rayos que penetran hasta el fondo del santuario, cuando recostado sobre la crecida hierba, cerca de la cascada, mi vista, más próxima a la tierra, descubre multitud de menudas y diversas plantas; cuando siento más cerca de mi corazón los rumores de vida de ese pequeño mundo que palpita en los tallos de las hojas, y veo las formas innumerables e infinitas de los gusanillos y de los insectos; cuando siento, en fin, la presencia del Todopoderoso, que nos ha creado</p>
+                <a href="./detail.html" class="sigue">Seguir leyendo...</a>
+            </div>
+        </article>
+        <article class="article" data-id="4">
+           <img src="./dist/images/article03.jpg" alt="Martin Pescador" class="ilustration">
+           <div class="info">
+                <header>
+                    <div class="author">
+                        <img class="portrait" src="./dist/images/author04.jpg" alt="foto del autor">
+                        <p class="nombre"><a href="./api/authors/4">Chica de la gorra</a></p>
+                        <p class="date"></p>
+                    </div>
+                    <div class="socials">
+                        <div class="likes"><button class="icon-btn favorite-btn"></button><span class="num-likes">12</span></div>
+                        <div class="comments"><button class="icon-btn comments-btn"></button><span class="num-comments">34</span></div>
+                    </div>
+                </header>
+                <h1 class="title">At vero eos et accusamus et iusto odio "</h1>
+                <p class="intro">Reina en mi espíritu una alegría admirable, muy parecida a las dulces alboradas de la primavera, de que gozo aquí con delicia. Estoy solo, y me felicito de vivir en este país, el más a propósito para almas como la mía, soy tan dichoso, mi querido amigo, me sojuzga de tal modo la idea de reposar, que no me ocupo de mi arte. Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y, sin embargo, jamás he sido mejor pintor Cuando el valle se vela en torno mío con un encaje de vapores; cuando el sol de mediodía centellea sobre la impenetrable sombra de mi bosque sin conseguir otra cosa que filtrar entre las hojas algunos rayos que penetran hasta el fondo del santuario, cuando recostado sobre la crecida hierba, cerca de la cascada, mi vista, más próxima a la tierra, descubre multitud de menudas y diversas plantas; cuando siento más cerca de mi corazón los rumores de vida de ese pequeño mundo que palpita en los tallos de las hojas, y veo las formas innumerables e infinitas de los gusanillos y de los insectos; cuando siento, en fin, la presencia del Todopoderoso, que nos ha creado</p>
+                <a href="./detail.html" class="sigue">Seguir leyendo...</a>
+            </div>
+        </article>
+        <article class="article" data-id="5">
+            <img src="./dist/images/article04.jpg" alt="Procesando audio con un mac" class="ilustration">
+            <div class="info">
+            <header>
+                <div class="author">
+                    <img class="portrait" src="./dist/images/author02.jpg" alt="foto del autor">
+                    <p class="nombre"><a href="./api/authors/2">Hipster de ojos claros</a></p>
+                    <p class="date"></p>
+                </div>
+                <div class="socials">
+                    <div class="likes"><button class="icon-btn favorite-btn"></button><span class="num-likes">12</span></div>
+                    <div class="comments"><button class="icon-btn comments-btn"></button><span class="num-comments">34</span></div>
+                </div>
+            </header>
+            <h1 class="title">Sed ut perspiciatis unde omnis</h1>
+            <p class="intro">Reina en mi espíritu una alegría admirable, muy parecida a las dulces alboradas de la primavera, de que gozo aquí con delicia. Estoy solo, y me felicito de vivir en este país, el más a propósito para almas como la mía, soy tan dichoso, mi querido amigo, me sojuzga de tal modo la idea de reposar, que no me ocupo de mi arte. Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y, sin embargo, jamás he sido mejor pintor Cuando el valle se vela en torno mío con un encaje de vapores; cuando el sol de mediodía centellea sobre la impenetrable sombra de mi bosque sin conseguir otra cosa que filtrar entre las hojas algunos rayos que penetran hasta el fondo del santuario, cuando recostado sobre la crecida hierba, cerca de la cascada, mi vista, más próxima a la tierra, descubre multitud de menudas y diversas plantas; cuando siento más cerca de mi corazón los rumores de vida de ese pequeño mundo que palpita en los tallos de las hojas, y veo las formas innumerables e infinitas de los gusanillos y de los insectos; cuando siento, en fin, la presencia del Todopoderoso, que nos ha creado</p>
+            <a href="./detail.html" class="sigue">Seguir leyendo...</a>
+        </div>
+        </article>
+        <article class="article" data-id="6">
+            <img src="./dist/images/article05.jpg" alt="Dos pimientos, uno rojo, uno naranja" class="ilustration">
+            <div class="info">
+                <header>
+                    <div class="author">
+                        <img class="portrait" src="./dist/images/author05.jpg" alt="foto del autor">
+                        <p class="nombre"><a href="./api/authors/5">Alter ego Spiderman</a></p>
+                        <p class="date"></p>
+                    </div>
+                    <div class="socials">
+                        <div class="likes"><button class="icon-btn favorite-btn"></button><span class="num-likes">12</span></div>
+                        <div class="comments"><button class="icon-btn comments-btn"></button><span class="num-comments">34</span></div>
+                    </div>
+                </header>
+                <h1 class="title">At solmen va esser necessi far uniform</h1>
+                <p class="intro">Reina en mi espíritu una alegría admirable, muy parecida a las dulces alboradas de la primavera, de que gozo aquí con delicia. Estoy solo, y me felicito de vivir en este país, el más a propósito para almas como la mía, soy tan dichoso, mi querido amigo, me sojuzga de tal modo la idea de reposar, que no me ocupo de mi arte. Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y, sin embargo, jamás he sido mejor pintor Cuando el valle se vela en torno mío con un encaje de vapores; cuando el sol de mediodía centellea sobre la impenetrable sombra de mi bosque sin conseguir otra cosa que filtrar entre las hojas algunos rayos que penetran hasta el fondo del santuario, cuando recostado sobre la crecida hierba, cerca de la cascada, mi vista, más próxima a la tierra, descubre multitud de menudas y diversas plantas; cuando siento más cerca de mi corazón los rumores de vida de ese pequeño mundo que palpita en los tallos de las hojas, y veo las formas innumerables e infinitas de los gusanillos y de los insectos; cuando siento, en fin, la presencia del Todopoderoso, que nos ha creado</p>
+                <a href="./detail.html" class="sigue">Seguir leyendo...</a>
+            </div>
+        </article>
+        <article class="article" data-id="7">
+            <img src="./dist/images/article06.jpg" alt="Tortuga marina mirando a cámara" class="ilustration">
+            <div class="info">
+                <header>
+                    <div class="author">
+                        <img class="portrait" src="./dist/images/author02.jpg" alt="foto del autor">
+                        <p class="nombre"><a href="./api/authors/2">Hipster de ojos claros</a></p>
+                        <p class="date"></p>
+                    </div>
+                    <div class="socials">
+                        <div class="likes"><button class="icon-btn favorite-btn"></button><span class="num-likes">12</span></div>
+                        <div class="comments"><button class="icon-btn comments-btn"></button><span class="num-comments">34</span></div>
+                    </div>
+                </header>
+                <h1 class="title">Nemo enim ipsam voluptatem quia</h1>
+                <p class="intro">Reina en mi espíritu una alegría admirable, muy parecida a las dulces alboradas de la primavera, de que gozo aquí con delicia. Estoy solo, y me felicito de vivir en este país, el más a propósito para almas como la mía, soy tan dichoso, mi querido amigo, me sojuzga de tal modo la idea de reposar, que no me ocupo de mi arte. Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y, sin embargo, jamás he sido mejor pintor Cuando el valle se vela en torno mío con un encaje de vapores; cuando el sol de mediodía centellea sobre la impenetrable sombra de mi bosque sin conseguir otra cosa que filtrar entre las hojas algunos rayos que penetran hasta el fondo del santuario, cuando recostado sobre la crecida hierba, cerca de la cascada, mi vista, más próxima a la tierra, descubre multitud de menudas y diversas plantas; cuando siento más cerca de mi corazón los rumores de vida de ese pequeño mundo que palpita en los tallos de las hojas, y veo las formas innumerables e infinitas de los gusanillos y de los insectos; cuando siento, en fin, la presencia del Todopoderoso, que nos ha creado</p>
+                <a href="./detail.html" class="sigue">Seguir leyendo...</a>
+            </div>
+        </article>
+        <article class="article" data-id="8">
+            <video class="ilustration" controls>
+                <source src="./dist/videos/Border-Collies.mp4" type="video/mp4" controls />
+            </video>
+            <div class="info">
+                <header>
+                    <div class="author">
+                        <img class="portrait" src="./dist/images/unknown.jpg" alt="foto del autor">
+                        <p class="nombre">Autor desconocido</p>
+                        <p class="date"></p>
+                    </div>
+                    <div class="socials">
+                        <div class="likes"><button class="icon-btn favorite-btn"></button><span class="num-likes">12</span></div>
+                        <div class="comments"><button class="icon-btn comments-btn"></button><span class="num-comments">34</span></div>
+                    </div>
+                </header>
+                <h1 class="title">Maecenas tempus</h1>
+                <p class="intro">Reina en mi espíritu una alegría admirable, muy parecida a las dulces alboradas de la primavera, de que gozo aquí con delicia. Estoy solo, y me felicito de vivir en este país, el más a propósito para almas como la mía, soy tan dichoso, mi querido amigo, me sojuzga de tal modo la idea de reposar, que no me ocupo de mi arte. Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y, sin embargo, jamás he sido mejor pintor Cuando el valle se vela en torno mío con un encaje de vapores; cuando el sol de mediodía centellea sobre la impenetrable sombra de mi bosque sin conseguir otra cosa que filtrar entre las hojas algunos rayos que penetran hasta el fondo del santuario, cuando recostado sobre la crecida hierba, cerca de la cascada, mi vista, más próxima a la tierra, descubre multitud de menudas y diversas plantas; cuando siento más cerca de mi corazón los rumores de vida de ese pequeño mundo que palpita en los tallos de las hojas, y veo las formas innumerables e infinitas de los gusanillos y de los insectos; cuando siento, en fin, la presencia del Todopoderoso, que nos ha creado</p>
+                <a href="./detail.html" class="sigue">Seguir leyendo...</a>
+            </div>
+        </article>
+        <article class="article" data-id="9">
+            <img src="./dist/images/article08.jpg" alt="Paisaje típico de western" class="ilustration">
+            <div class="info">
+                <header>
+                    <div class="author">
+                        <img class="portrait" src="./dist/images/author01.jpg" alt="foto del autor">
+                        <p class="nombre"><a href="./api/authors/1">Joven Pelirroja</a></p>
+                        <p class="date"></p>
+                    </div>
+                    <div class="socials">
+                        <div class="likes"><button class="icon-btn favorite-btn"></button><span class="num-likes">12</span></div>
+                        <div class="comments"><button class="icon-btn comments-btn"></button><span class="num-comments">34</span></div>
+                    </div>
+                </header>
+                <h1 class="title">Neque porro quisquam est"</h1>
+                <p class="intro">Reina en mi espíritu una alegría admirable, muy parecida a las dulces alboradas de la primavera, de que gozo aquí con delicia. Estoy solo, y me felicito de vivir en este país, el más a propósito para almas como la mía, soy tan dichoso, mi querido amigo, me sojuzga de tal modo la idea de reposar, que no me ocupo de mi arte. Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y, sin embargo, jamás he sido mejor pintor Cuando el valle se vela en torno mío con un encaje de vapores; cuando el sol de mediodía centellea sobre la impenetrable sombra de mi bosque sin conseguir otra cosa que filtrar entre las hojas algunos rayos que penetran hasta el fondo del santuario, cuando recostado sobre la crecida hierba, cerca de la cascada, mi vista, más próxima a la tierra, descubre multitud de menudas y diversas plantas; cuando siento más cerca de mi corazón los rumores de vida de ese pequeño mundo que palpita en los tallos de las hojas, y veo las formas innumerables e infinitas de los gusanillos y de los insectos; cuando siento, en fin, la presencia del Todopoderoso, que nos ha creado</p>
+                <a href="./detail.html" class="sigue">Seguir leyendo...</a>
+            </div>
+        </article>
+        <article class="article" data-id="10">
+            <img src="./dist/images/article07.jpg" alt="Caza volando, visto desde arriba, el mar debajo" class="ilustration">
+            <div class="info">
+                <header>
+                    <div class="author">
+                        <img class="portrait" src="./dist/images/unknown.jpg" alt="foto del autor">
+                        <p class="nombre">Autor sin foto 1</p>
+                        <p class="date"></p>
+                    </div>
+                    <div class="socials">
+                        <div class="likes"><button class="icon-btn favorite-btn"></button><span class="num-likes">12</span></div>
+                        <div class="comments"><button class="icon-btn comments-btn"></button><span class="num-comments">91</span></div>
+                    </div>
+                </header>
+                <h1 class="title">Et harum quidem rerum</h1>
+                <p class="intro">Reina en mi espíritu una alegría admirable, muy parecida a las dulces alboradas de la primavera, de que gozo aquí con delicia. Estoy solo, y me felicito de vivir en este país, el más a propósito para almas como la mía, soy tan dichoso, mi querido amigo, me sojuzga de tal modo la idea de reposar, que no me ocupo de mi arte. Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y, sin embargo, jamás he sido mejor pintor Cuando el valle se vela en torno mío con un encaje de vapores; cuando el sol de mediodía centellea sobre la impenetrable sombra de mi bosque sin conseguir otra cosa que filtrar entre las hojas algunos rayos que penetran hasta el fondo del santuario, cuando recostado sobre la crecida hierba, cerca de la cascada, mi vista, más próxima a la tierra, descubre multitud de menudas y diversas plantas; cuando siento más cerca de mi corazón los rumores de vida de ese pequeño mundo que palpita en los tallos de las hojas, y veo las formas innumerables e infinitas de los gusanillos y de los insectos; cuando siento, en fin, la presencia del Todopoderoso, que nos ha creado</p>
+                <a href="./detail.html" class="sigue">Seguir leyendo...</a>
+            </div>
         </article>
     </section>    
+    <section class="pagination">    
+        <button class="newer" disabled><i class="fa fa-backward" aria-hidden="true"></i><span class="text">Más nuevas</span></button>
+        <button class="home" disabled><i class="fa fa-home" aria-hidden="true"></i><span class="text">Inicio</span></button>
+        <button class="older"><i class="fa fa-forward" aria-hidden="true"></i><span class="text">Más antiguas</span></button>
+    </section>
     <footer class="web-footer">
-        <p>digestiveThinking &copy; 2017 <a href="#top"><i class="fa fa-chevron-up  pull-right" aria-hidden="true"></i></a></p>
+        <p class="container">digestiveThinking &copy; 2017 <a href="#top"><i class="fa fa-chevron-up  pull-right" aria-hidden="true"></i></a></p>
     </footer>
 </body>
 <script src="./dist/js/main.js"></script>

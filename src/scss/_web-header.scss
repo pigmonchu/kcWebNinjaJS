@@ -20,16 +20,6 @@ $header-factor-growth: 1.55;
         height: #{$header-height * $header-factor-growth} !important;
     }
 
-    button {
-        cursor: pointer;
-        border: 0;
-        background-color: transparent;
-
-        &:focus {
-            outline: 0;
-        }
-    }
-
 
     .logo {
         height: $logo-height;
@@ -50,6 +40,10 @@ $header-factor-growth: 1.55;
 
         &.active {
             right: 0px;
+            .signin, .signup, .separator {
+                display: none;
+                 
+            }
         }
 
         .signin, .signup, .separator, .search-grp, .search {
