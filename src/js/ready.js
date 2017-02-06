@@ -31,29 +31,36 @@ var readyMain = function() {
    //Activamos los eventos generales de la plantilla
         templateEvents();        
 
-        //Likes
-        
-        
+  //Likes
         $("article.article").on("click", ".favorite-btn, .favoriteOn-btn", function(event){
             likesManager.procesarLike(event.delegateTarget.dataset.id);
         })
+  //Podrían activarse los comentarios aquí, pero para después
 
-        //comments
-        $(".comments-btn").on("click", function(){
-            alert("Comentar");
-        })
+
+
 
 };
+
+var readyDetail = function() {
+    templateEvents();
+
+    $(window).scroll(UIManager.watchCommentsSection);
+    $(window).trigger("scroll");
+}
 
 $().ready(function(){ 
 
     var path = window.location.pathname;
 
-//    switch (path) {
-//        case "/":
+    switch (path) {
+        case "/":
             readyMain();
-//            break;          
-//    }
+            break;
+        case "/detail.html":
+            readyDetail();
+            break;          
+    }
 
 
 

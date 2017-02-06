@@ -3,17 +3,20 @@ var likesService = require("./LikesService");
 
 var favBoton = "favorite-btn";
 var favBotonOn = "favoriteOn-btn";
+var selBoton = "."+favBoton;
+var selBotonOn = "."+favBotonOn;
+
 var selectorArticuloFin ="article.article[data-id=";
 
 var likesManager = {
     activarLike: function(articleId) {
-        var boton = $("article.article[data-id=" + articleId +"] .favorite-btn");
+        var boton = $("article.article[data-id=" + articleId +"] " + selBoton);
         boton.removeClass(favBoton);
         boton.addClass(favBotonOn);
     },
 
     desactivarLike: function(articleId) {
-        var boton = $("article.article[data-id=" + articleId +"] .favoriteOn-btn");
+        var boton = $("article.article[data-id=" + articleId +"] " + selBotonOn);
         boton.removeClass(favBotonOn);
         boton.addClass(favBoton);
     },

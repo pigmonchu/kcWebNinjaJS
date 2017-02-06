@@ -70,11 +70,18 @@ ul.lista li::before {
     font-size: $font-size-large;
 }
 
-
 a {
     color: $attention-color;
     text-decoration: none;
     &:hover {
         text-decoration: underline;
     }
+}
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
 }

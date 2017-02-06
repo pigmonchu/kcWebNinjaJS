@@ -9,13 +9,6 @@
     }
 }
 
-.container {
-	width: 100%;
-	max-width: 1200px;
-	margin: 0 auto;
-	position: relative;
-}
-
 .navigate {
     cursor: pointer; 
 }
@@ -68,3 +61,19 @@
         @content;
     }
 } 
+
+@mixin container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	position: relative;
+    padding: $default-padding;
+    @include if-is-medium-screen {
+        padding: #{2 * $default-padding};
+    }
+}
+
+.container {
+    @include container;
+}
+

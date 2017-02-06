@@ -1,9 +1,9 @@
 $width-input: 150px;
 $heigth-input: 16px;
 
-input, button {
+input, button, textarea {
     width: $width-input;
-    height: $heigth-input;
+    min-height: $heigth-input;
     border: 1px solid $color-gray;
     padding: #{$default-padding/2};
     border-radius: $default-border-radius;
@@ -14,13 +14,77 @@ input, button {
     }
 }
 
+textarea {
+    resize: vertical;
+    max-height: #{$font-size-large * 7};
+}
+
 button.icon-btn {
      cursor: pointer;
-        border: 0;
-        background-color: transparent;
+    border: 0;
+    background-color: transparent;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+form {
+    padding: 10px;
+
+    label, input, button, textarea {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    label {
+        font-size: $font-size-small;
+        font-weight: bold;
+        text-transform: uppercase;
+
+        &:after {
+            content: ":";
+        }
+    }
+    input, textarea {
+        transition: background-color 0.25s;
+        border: 1px solid $color-gray;
+        border-radius: $default-border-radius;
+        margin: 5px 0 15px;
+        padding: 5px;
+        font-size: $font-size-base;
 
         &:focus {
-            outline: 0;
+            outline-color: lighten($primary-color, 10%);
+            background-color: lighten($attention-color, 52%);
+        }
+    }
+
+    button {
+        @extend input;
+        color: $inverse-text-color;
+        font-weight: bold;
+        text-transform: uppercase;
+        background-color: $attention-color;
+
+        &:hover {
+            background-color: lighten($attention-color, 10%);
         }
 
+        &:active { //click
+            background-color: darken($attention-color, 10%);
+        }
+    }
+
+    div.header-form {
+        background: $attention-color;
+        color: $default-background-color;
+        width: calc(100% + #{$default-padding*2});
+        padding: 10px;
+        font-size: $font-size-large;
+        text-transform: uppercase;
+        margin: -10px -10px 15px;
+
+    }
 }

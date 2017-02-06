@@ -5,6 +5,14 @@ $logo-height: 30px;
 $header-height: 45px;
 $header-factor-growth: 1.55;
 
+@mixin top-gap-header {
+    margin-top: #{2 * $header-height}; //para salvar el gap del menú y el header
+
+    @include if-is-large-screen {
+        margin-top: #{$header-height * $header-factor-growth};
+    }
+}
+
 .web-header {
     position: fixed;
     display: block;

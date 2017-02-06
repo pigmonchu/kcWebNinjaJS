@@ -1,0 +1,77 @@
+.detail-article {
+
+    p {
+        line-height: 1.5em;
+
+        &.first-paragraph {
+            font-size: 1.3em;
+        }
+    }
+
+    @include top-gap-header;
+
+
+    .ilustration {
+        width: 100%;
+        margin: #{$default-margin*3} 0;
+    }
+
+    @include article-social-data;
+}
+
+.comments-list {
+    @include container;
+
+    padding: $default-padding;
+    @include if-is-medium-screen {
+        padding: #{2 * $default-padding};
+    }
+
+    div[class^="ui-"] {
+        display: none;
+    }
+
+    &.ideal .ui-ideal {
+        display:block;
+        .comment {
+            background-color: darken(white, 5%);
+            border-radius: $default-border-radius;
+            padding: $default-padding;
+            margin: $default-margin 0;
+
+            .nombre {
+                font-weight: bold;
+            }
+            .email {
+                font-weight: 300;
+            }
+            .comentario {
+                font-family: "Roboto Mono";
+                font-size: 0.8em;
+                background-color: $default-background-color;
+                border: 0.5px solid $light-gray;
+                padding: #{$default-padding / 2};
+            }
+
+        }
+    }
+ 
+    &.blank .ui-blank {
+        display:block;
+    }
+
+    &.error .ui-error {
+        display: block;
+    }
+
+    &.loading .ui-loading {
+        display:block;
+    }
+    
+    .new-comment-form {
+        width: 100%;
+        background-color: darken(white, 5%);
+        padding: $default-padding;
+        margin: #{$default-margin*2} 0;
+    }   
+}

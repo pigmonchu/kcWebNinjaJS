@@ -6,17 +6,59 @@ $max-lines-intro-mobile: 2;
 $max-lines-intro-tablet: 4;
 $max-lines-intro-desktop: 6;
 
+@mixin article-social-data {
+    header {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        .author {
+            display: inline-block;
+            width: 80%;
+            margin-top:$default-margin;
+            .portrait {
+                width: 32px;
+                margin: 0 $default-margin 0 0;
+                border-radius: 50%;
+                float: left;
+            }
+
+            .nombre {
+                font-size: $font-size-small;
+                margin: $icon-gap $default-margin 0;
+            }
+            .date {
+                color: $color-gray;
+                font-size: $font-size-very-small;
+                margin: 0 $default-margin;
+            }
+
+        }
+
+        .socials {
+            display: inline-block;
+            width: 20%;
+            color: $color-gray;
+            text-align: right;
+
+            .favorite-btn:hover,
+            .comments-btn:hover {
+              background-color: lighten($attention-color, 40%);
+            }
+
+            .num-likes, .num-comments {
+                margin-left: $icon-gap;
+                display:inline-block;
+                min-width: #{$font-size-base*1.5};
+            }
+
+        }
+    }
+    
+}
+
 .articles {
-    padding: $default-padding;
-    margin-top: #{2 * $header-height}; //para salvar el gap del menú y el header
-
-    @include if-is-medium-screen {
-        padding: #{2 * $default-padding};
-    }
-
-    @include if-is-large-screen {
-        margin-top: #{$header-height * $header-factor-growth};
-    }
+    @include top-gap-header;
 
     .article {
         display: flex;
@@ -61,56 +103,7 @@ $max-lines-intro-desktop: 6;
                 width: 58%;
             }
 
-            header {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: nowrap;
-
-                .author {
-                    display: inline-block;
-                    width: 80%;
-                    margin-top:$default-margin;
-                    .portrait {
-                        width: 32px;
-                        margin: 0 $default-margin 0 0;
-                        border-radius: 50%;
-                        float: left;
-                    }
-
-                    .nombre {
-                        font-size: $font-size-small;
-                        margin: $icon-gap $default-margin 0;
-                    }
-                    .date {
-                        color: $color-gray;
-                        font-size: $font-size-very-small;
-                        margin: 0 $default-margin;
-                    }
-
-                }
-
-                .socials {
-                    display: inline-block;
-                    width: 20%;
-                    color: $color-gray;
-                    text-align: right;
-
-                    .favorite-btn:hover {
-                        border-bottom: 1px solid $color-gray;
-                    }
-
-                    .comments-btn:hover {
-                        border-bottom: 1px solid $color-gray;
-                    }
-
-                    .num-likes, .num-comments {
-                        margin-left: $icon-gap;
-                        display:inline-block;
-                        min-width: #{$font-size-base*1.5};
-                    }
-
-                }
-            }
+            @include article-social-data;
 
             .intro {
                 line-height: $intro-line-height;

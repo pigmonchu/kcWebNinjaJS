@@ -275,7 +275,7 @@ var config = {
 };
 
 // Tarea por defecto, veríficar cambios y en función de ellos lanzar procesos
-gulp.task("default", [config.sass.taskName, config.js.taskName, config.fontAwesome.taskName, config.sprites.taskName, config.videos.taskName], function(){
+gulp.task("default", [config.sass.taskName, config.js.taskName, config.fontAwesome.taskName, config.sprites.taskName, config.videos.taskName, config.images.taskName], function(){
 
 	//arrancar el servidor
 	browserSync.init( {

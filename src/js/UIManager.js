@@ -1,5 +1,6 @@
 var $ = require('jquery');
 var devicesJumps = require('./devicesJumps');
+var detailManager = require('./DetailManager');
 
 var UIManager = {
     headerSetTop: function() {
@@ -21,7 +22,9 @@ var UIManager = {
     },
 
     navigate: function(event) {
-        window.location.href = event.target.dataset.href;
+        var href = event.target.dataset.href || event.delegateTarget.dataset.href;
+    
+        window.location.href = href;
     },
 
     searchToggle: function(event) {
@@ -39,7 +42,20 @@ var UIManager = {
             $(event.delegateTarget).removeClass("active"); //Aquí deberá invocar al servicio de búsqueda
         }
 
+    },
+
+    watchCommentsSection: function(){
+        if (!this.offSetComments) {
+            this.offSetComments = $("." + detailManager.defaultClass).offset().top;
+        }
+        var y = $(this).scrollTop();
+        var h = $(this).height();
+
+        if (y+h > this.offSetComments) {
+            detailManager.commentsVisible();
+        }
     }
+
 
 
 };
