@@ -2,6 +2,7 @@ var $ = require('jquery');
 var UIManager = require('./UIManager');
 var likesManager = require('./LikesManager');
 var likesService = require("./LikesService");
+var dateManager = require("./DateManager");
 
 var templateEvents = function() {
     //GESTION DE EVENTOS
@@ -35,8 +36,9 @@ var readyMain = function() {
         $("article.article").on("click", ".favorite-btn, .favoriteOn-btn", function(event){
             likesManager.procesarLike(event.delegateTarget.dataset.id);
         })
-  //Podrían activarse los comentarios aquí, pero para después
 
+  //Formatear fechas respecto al día de hoy
+        dateManager.actualizaFechas();
 
 
 

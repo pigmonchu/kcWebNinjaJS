@@ -17,6 +17,12 @@ $ npm install
 $ gulp
 ~~~
 
+4) En otro terminal se lanza el servidor de backend
+
+~~~
+python server.py
+~~~
+
 
 
 
