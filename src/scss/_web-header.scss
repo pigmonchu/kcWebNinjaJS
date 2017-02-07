@@ -60,10 +60,12 @@ $header-factor-growth: 1.55;
         }
 
         .signin {
+            vertical-align: bottom; //Investigar más a fondo. Necesario para que se vea bien en firefox
             @extend .login-btn;
         }
 
         .signup {
+            vertical-align: bottom;  //Investigar más a fondo. Necesario para que se vea bien en firefox
             @extend .signup-btn;
         }
 
