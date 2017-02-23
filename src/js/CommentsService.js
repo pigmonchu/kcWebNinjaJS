@@ -4,9 +4,8 @@ var API_URL = "/api/comments/";
 
 var service = {
 
-//recuperar todas las canciones
+//recuperar todas los comentarios
     list: function(successCallback, errorCallback) {
-        alert("LLamo para la carga");
         $.ajax({
             type: "get",
             url: API_URL,
@@ -15,53 +14,53 @@ var service = {
             },
             error: function(error) {
                 errorCallback(error);
-                console.error("Error al recuperar las canciones", error);
+                console.error("Error al recuperar los comentarios", error);
             }
         });
     },
 
-//recuperar una sola canción
+//recuperar un comentario
     get: function(commentId, successCallback, errorCallback) {
         $.ajax({
             type: "get",
-            url: API_URL+songId,
+            url: API_URL+commentId,
             success: function(data) {
                 successCallback(data);
             },
             error: function(error) {
                 errorCallback(error);
-                console.error("Error al recuperar las canciones", error);
+                console.error("Error al recuperar los comentarios", error);
             }
         });
     },
 
-//guarda una canción
-    save : function(song, successCallback, errorCallback) {
+//guarda un comentario
+    save : function(comment, successCallback, errorCallback) {
         $.ajax({
             type: "post",
             url: API_URL,
-            data: song,
+            data: comment,
             success: function(data) {
                 successCallback(data);
             },
             error: function(error) {
                 errorCallback(error);
-                console.error("Error al recuperar las canciones", error);
+                console.error("Error al recuperar los comentarios", error);
             }
         });
     },
 
-//borrar una canción    
-    delete: function(songId, successCallback, errorCallback) {
+//borrar un comentario    
+    delete: function(commentId, successCallback, errorCallback) {
         $.ajax({
             type: "delete",
-            url: API_URL+songId,
+            url: API_URL+commentId,
             success: function(data) {
                 successCallback(data);
             },
             error: function(error) {
                 errorCallback(error);
-                console.error("Error al recuperar las canciones", error);
+                console.error("Error al recuperar los comentarios", error);
             }
         });
     }

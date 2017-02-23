@@ -1,7 +1,7 @@
 var $ = require("jquery");
 var moment = require("moment");
+require('moment/locale/es');
 moment.locale('es');
-
 
 var dateManager = {
     segundo: 1000,
@@ -23,27 +23,28 @@ var dateManager = {
     ],
     actualizaFechas: function() {
 
-        var elements = $("p.date");
+        var elements = $("time");
         var now = moment();
         var origin = now.format();
         for (var i=0; i<elements.length; i++) {
-            now.subtract(this.timeGaps[i][0], this.timeGaps[i][1]);
-            var html = this.comparaFechas(now.format(), origin);
+            var datePub = moment($(elements[i]).attr("datetime"))
+            var html = this.comparaFechas(datePub.format(), origin);
             $(elements[i]).html(html);
         }
 
     }, 
 
     comparaFechas: function(fecha, origen) {
-        var delta = moment(origen).diff(moment(fecha));        
+        var delta = moment(origen).diff(moment(fecha));
         if (delta < this.minuto) {
-            return moment(delta).format("s")+" seconds Ago";
+            return "Hace " + delta / this.segundo +" seg.";
         } else if (delta < this.hora) {
-            return moment(delta).format("m")+ "minutes Ago";
+            var formatDelta = moment(delta);
+            return "Hace " + moment(delta).format("m")+ " min.";
         } else if (delta < this.dia) {
-            return moment(delta).format("h")+" hours Ago";
+            return "Hace " + moment(delta).format("h")+" h.";
         } else if (delta < this.semana) {
-            return "last " + moment(fecha).format("dddd");
+            return "El pasado " + moment(fecha).format("dddd");
         } else {
             return moment(fecha).format("DD/MM/YYYY hh:mm:ss A");
         }

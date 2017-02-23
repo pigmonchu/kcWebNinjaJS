@@ -1,11 +1,13 @@
 var $ = require('jquery');
 var commentsService = require("./CommentsService");
 var detailManager = require("./DetailManager");
+var sanitizeHtml = require("sanitize-html");
 
 $('.new-comment-form').on("submit", function(event) {
     var self = this;
 	event.preventDefault();
  
+ // Validación (habría que sacarla, pero no hoy)
     var inputs = $(this).find("input, textarea");
     for (var i=0; i<inputs.length; i++) {
         var input = inputs[i];
@@ -26,18 +28,20 @@ $('.new-comment-form').on("submit", function(event) {
     }
 
     var comment = {
-        "nombre-completo": $("#nombre-completo").val(),
-        email: $("#email").val(),
-        comentario: $("#comentario").val()
+        "nombre-completo": sanitizeHtml($("#nombre-completo").val()),
+        email: sanitizeHtml($("#email").val()),
+        comentario: sanitizeHtml($("#comentario").val())
     };
 
     $(this).find(".send-comment").text("Publicando...").attr("disabled", true);
+
+
 
     commentsService.save(comment, 
                     function(data) {
                         alert("Comentario guardado correctamente");
                         self.reset();
-                        $(self).find("button").text("Publicando...").attr("disabled", false);
+                        $(self).find("button").text("Publicar").attr("disabled", false);
                         detailManager.loadComments();
                     }, 
                     function(error){
